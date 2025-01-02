@@ -1,6 +1,8 @@
 function love.load()
 	W, H = 800, 600
 	X, Y = W / 2, H / 2
+	Walk = 0.4
+	Run = 0.7
 	Second = 0
 	love.window.setMode(W, H, {
 		resizable = true,
@@ -18,4 +20,29 @@ end
 
 function love.update(dt)
 	Second = Second + dt
+	if not love.keyboard.isDown('lshift') then
+		if love.keyboard.isDown('w') then
+			Y = Y - Walk
+		elseif love.keyboard.isDown('s') then
+			Y = Y + Walk
+		end
+
+		if love.keyboard.isDown('a') then
+			X = X - Walk
+		elseif love.keyboard.isDown('d') then
+			X = X + Walk
+		end
+	elseif love.keyboard.isDown('lshift') then
+		if love.keyboard.isDown('w') then
+			Y = Y - Run
+		elseif love.keyboard.isDown('s') then
+			Y = Y + Run
+		end
+
+		if love.keyboard.isDown('a') then
+			X = X - Run
+		elseif love.keyboard.isDown('d') then
+			X = X + Run
+		end
+	end
 end
