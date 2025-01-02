@@ -13,18 +13,19 @@ function love.load()
 		minwidth = 400,
 		minheight = 300
 	})
+	player = Player:new(x, y, Walk, Run)
 end
 
 function love.draw()
-	love.graphics.print("Hello World!", x - 50, y)
+	love.graphics.setColor(1, 1, 1)
 	love.graphics.print("seconds: " .. Second, 0, 0)
 	love.graphics.print("HELP", 760, 0)
-	player = Player:new(x, y, Walk, Run)
+	player:show()
 end
 
 function love.update(dt)
 	Second = Second + dt
-	Player.movement(player)
+	player:movement()
 	--[[local walk = 0.45
 	local run = 0.7
 	local isW = love.keyboard.isDown('w')

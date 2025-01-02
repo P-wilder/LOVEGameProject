@@ -39,3 +39,8 @@ function Player:movement()
 		end
 	end
 end
+
+function Player:show()
+        love.graphics.setColor(1, 0, 0)
+        love.graphics.circle('fill', self.x, self.y, 25)
+end
