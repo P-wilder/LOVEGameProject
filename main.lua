@@ -17,8 +17,7 @@ end
 
 function love.draw()
 	love.graphics.setBackgroundColor(1, 1, 1)
-	love.graphics.setColor(0, 0, 0)
-	love.graphics.print("seconds: " .. second, 0, 0)
+	love.graphics.print({{0, 0, 0}, "seconds: " .. second}, 0, 0)
 	player:show()
 end
 
