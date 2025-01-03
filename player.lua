@@ -41,6 +41,6 @@ function Player:movement()
 end
 
 function Player:show()
-        love.graphics.setColor(1, 0, 0)
-        love.graphics.circle('fill', self.x, self.y, 25)
+        local playerSprite = love.graphics.newImage("BoodreauBasic.png")
+        love.graphics.draw(playerSprite, self.x, self.y)
 end

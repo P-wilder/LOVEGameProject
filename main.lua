@@ -9,14 +9,15 @@ function love.load()
 	love.window.setMode(w, h, {
 		resizable = true,
 		vsync = 0,
-		minwidth = 400,
-		minheight = 300
+		minwidth = x,
+		minheight = y
 	})
 	player = Player:new(x, y, 0.45, 0.7)
 end
 
 function love.draw()
-	love.graphics.setColor(1, 1, 1)
+	love.graphics.setBackgroundColor(1, 1, 1)
+	love.graphics.setColor(0, 0, 0)
 	love.graphics.print("seconds: " .. second, 0, 0)
 	player:show()
 end
